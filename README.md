@@ -1,5 +1,7 @@
 # 🚢 Learning Docker
 ## [Youtube Tutorial](https://www.youtube.com/watch?v=OhnTMWmfTBE)
+<img src="https://miro.medium.com/v2/resize:fit:882/1*Ibnwjo9LtUFxRY1MZgOcvg.png" width="320" />
+<br />
 
 ## Some useful commands
 
@@ -19,4 +21,24 @@
 | `docker rm CONTAINER_NAME` | `docker rm vite-container` | Deletes a stopped container |
 | `docker tag OLD NEW` | `docker tag myapp:latest myusername/myapp:1.0` | Tags an image with a new name or version |
 
-<!-- next step docker volume -->
+## Docker Volume Commands
+
+| Command | Example | Description |
+|---------|---------|-------------|
+| `docker volume create VOLUME_NAME` | `docker volume create mydata` | Creates a new Docker volume |
+| `docker volume ls` | `docker volume ls` | Lists all Docker volumes |
+| `docker volume inspect VOLUME_NAME` | `docker volume inspect mydata` | Shows detailed info about a volume |
+| `docker volume rm VOLUME_NAME` | `docker volume rm mydata` | Removes a volume |
+| `docker run -v VOLUME_NAME:/path/in/container IMAGE` | `docker run -v mydata:/app/data my-app` | Mounts a volume inside a container |
+
+## Docker Network Commands
+
+| Command | Example | Description |
+|---------|---------|-------------|
+| `docker network ls` | `docker network ls` | Lists all Docker networks |
+| `docker network create NETWORK_NAME` | `docker network create mynetwork` | Creates a new user-defined network |
+| `docker network inspect NETWORK_NAME` | `docker network inspect mynetwork` | Displays detailed info about a network |
+| `docker network rm NETWORK_NAME` | `docker network rm mynetwork` | Deletes a user-defined network |
+| `docker run --network NETWORK_NAME IMAGE` | `docker run --network mynetwork my-app` | Connects a container to a specific network |
+
+<!-- next step docker compose -->
