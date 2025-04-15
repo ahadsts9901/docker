@@ -41,4 +41,28 @@
 | `docker network rm NETWORK_NAME` | `docker network rm mynetwork` | Deletes a user-defined network |
 | `docker run --network NETWORK_NAME IMAGE` | `docker run --network mynetwork my-app` | Connects a container to a specific network |
 
-<!-- next step docker compose -->
+## Docker Compose Commands
+
+| Command | Example | Description |
+|---------|---------|-------------|
+| `docker-compose up` | `docker-compose up` | Starts and runs containers defined in `docker-compose.yml` |
+| `docker-compose up --build` | `docker-compose up --build` | Builds images before starting the containers |
+| `docker-compose down` | `docker-compose down` | Stops and removes containers, networks, volumes defined in the file |
+| `docker-compose stop` | `docker-compose stop` | Stops services without removing them |
+| `docker-compose start` | `docker-compose start` | Starts existing containers |
+| `docker-compose ps` | `docker-compose ps` | Lists containers managed by Compose |
+| `docker-compose logs` | `docker-compose logs` | Displays logs for services |
+| `docker-compose logs -f` | `docker-compose logs -f` | Follows live logs like `tail -f` |
+| `docker-compose exec SERVICE sh` | `docker-compose exec web sh` | Opens a shell inside a running container |
+| `docker-compose build` | `docker-compose build` | Manually builds images for services |
+
+### ✅ Run a Single Service with Docker Compose
+
+| Command | Example | Description |
+|---------|---------|-------------|
+| `docker-compose up SERVICE_NAME` | `docker-compose up vite-app` | Runs a single service from the Compose file |
+| `docker-compose up -d SERVICE_NAME` | `docker-compose up -d vite-app` | Runs a single service in detached mode |
+| `docker-compose stop SERVICE_NAME` | `docker-compose stop vite-app` | Stops a specific service |
+| `docker-compose start SERVICE_NAME` | `docker-compose start vite-app` | Starts a specific stopped service |
+| `docker-compose logs SERVICE_NAME` | `docker-compose logs vite-app` | Shows logs for a specific service |
+| `docker-compose exec SERVICE_NAME sh` | `docker-compose exec vite-app sh` | Open shell inside a specific service |
